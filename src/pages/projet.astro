@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+
+import Hero from '../components/Hero.astro';
+
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="Mes projets | I.Diallo"
+	description="Voir les derniers projets de Issa"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Devenir Technicien Informatique"
+				tagline=" "
+				align="start"
+			/>	 
+
+<article>
+  
+<section>
+    <h2>Introduction</h2>
+    <p>Le métier de technicien informatique est essentiel dans toute entreprise moderne. Les techniciens informatiques sont responsables de la maintenance et de la réparation des systèmes informatiques, du soutien technique aux utilisateurs et de la mise en place de nouveaux logiciels et matériels informatiques. Si vous êtes passionné par la technologie et que vous avez une capacité à résoudre des problèmes, devenir technicien informatique peut être une carrière enrichissante et passionnante.</p>
+  </section>
+
+  <section>
+    <h2>Compétences requises</h2>
+    <p>Pour devenir un technicien informatique réussi, vous devez avoir une solide compréhension de l'informatique et des technologies de l'information. Vous devez être en mesure de résoudre des problèmes complexes et de comprendre les systèmes informatiques. Vous devriez également avoir une connaissance des systèmes d'exploitation tels que Windows, Mac OS et Linux, ainsi que des connaissances en matière de réseaux et de sécurité informatique.</p>
+    <p>Les compétences en communication sont également importantes car vous devrez travailler avec des utilisateurs qui ont des niveaux de compétences informatiques différents. Vous devez être en mesure d'expliquer des concepts techniques de manière claire et compréhensible.</p>
+  </section>
+
+  <section>
+    <h2>Savoir-faire</h2>
+    <p>En tant que technicien informatique, vous devrez être capable de:</p>
+    <ul>
+      <li>Installer et configurer des logiciels et des matériels informatiques</li>
+      <li>Résoudre des problèmes de matériel et de logiciel</li>
+      <li>Effectuer des tests de diagnostic pour identifier les problèmes</li>
+      <li>Mettre en place des systèmes de sécurité informatique pour protéger les données de l'entreprise</li>
+      <li>Fournir une assistance technique aux utilisateurs et résoudre les problèmes de support technique</li>
+      <li>Former les utilisateurs aux nouvelles technologies informatiques</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Formation</h2>
+    <p>Pour devenir un technicien informatique, vous devez avoir un diplôme d'études collégiales ou une formation équivalente dans un domaine lié à l'informatique, comme l'informatique, la technologie de l'information ou l'ingénierie. Vous pouvez également obtenir des certifications en matière de sécurité informatique ou de réseaux pour améliorer vos compétences et votre employabilité.</p>
+  </section>
+
+  <section>
+    <h2>Opportunités d'emploi</h2>
+    <p>Les techniciens informatiques sont en demande dans de nombreuses industries, y compris les entreprises de technologie, les entreprises de services, les gouvernements et les organisations à but non lucratif. Vous pouvez travailler pour une entreprise ou une organisation spécifique en tant que technicien informatique inter
+
+			 
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

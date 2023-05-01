@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A Propos | I.Diallo" description="Me concernant">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A Propos"
+				tagline=" Merci d'être passé. Lisez ci-dessous pour en savoir plus sur moi-même et mon parcours."
+			>
+				<img class="center-image"
+					width="400"
+					height="200" src="/assets/portrait.jpg" alt="Ma photo de profil"
+				/>
+			</Hero>
+			
+			<section>
+				 	 
+				<div class="content">
+						<h1>Passionné d'informatique</h1>
+						<p>Je suis passionné par le monde de l'informatique, en particulier par les métiers de technicien informatique, de la cybersécurité, du développement web, j'apprends à ce jour l'Active Directory et  la virtualisation. J'ai de solides connaissances dans ces domaines et je suis toujours à l'affût des dernières tendances et technologies.</p>
+						<h2>Mes compétences</h2>
+						<ul>
+						  <li>Installation, configuration et maintenance des ordinateurs et des réseaux</li>
+						  <li>Gestion de la sécurité informatique et prévention contre les cyber-attaques</li>
+						  <li>Développement de sites web dynamiques en utilisant HTML, CSS et JavaScript</li>
+						  <li>Administration d'Active Directory, y compris la gestion des utilisateurs et des groupes</li>
+						  <li>Virtualisation des serveurs en utilisant VMware et Hyper-V</li>
+						</ul>
+						<h2>Mes savoir-faire</h2>
+						<ul>
+						  <li>Résolution de problèmes techniques complexes</li>
+						  <li>Communication claire et efficace avec les clients et les collègues</li>
+						  <li>Capacité à travailler de manière autonome et en équipe</li>
+						  <li>Apprentissage rapide de nouvelles technologies et compétences</li>
+						</ul>
+					  </div>
+					 
+				
+			</section>
+			 
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.apropos {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.apropos {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.apropos > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
